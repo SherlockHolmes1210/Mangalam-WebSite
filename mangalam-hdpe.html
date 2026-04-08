@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium HDPE Pipes & Fittings Manufacturer in South India - Mangalam HDPE Pipes">
+  <title>Mangalam HDPE Pipes | Premium HDPE Pipes & Fittings</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Liter&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════
+   MANGALAM HDPE PIPES — Full Design System (Figma-accurate)
+   Palette: Navy #0a1428 · Red #c8102e · White #ffffff
+   Fonts:  DM Serif Display (headings) · DM Sans (body)
+   ═══════════════════════════════════════════════════════════ */
+
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button,input,select{font-family:inherit}
+ul,ol{list-style:none}
+
+
+:root{
+  --navy:     #0a1428;
+  --navy-2:   #11223f;
+  --red:      #c8102e;
+  --red-dark: #a50e26;
+  --white:    #ffffff;
+  --g50:      #f8f9fb;
+  --g100:     #f0f2f5;
+  --g200:     #e2e6ed;
+  --g400:     #9aa3b0;
+  --g600:     #4b5563;
+  --g800:     #1f2937;
+  --text:     #1a2535;
+
+  --sp100: 100px;   /* Figma section padding */
+  --maxw:  1600px;
+  --r-sm:  8px;
+  --r-md:  12px;
+  --r-lg:  20px;
+  --r-xl:  24px;
+
+  --sh-card:  0 2px 16px rgba(10,20,40,.07);
+  --sh-hover: 0 8px 32px rgba(10,20,40,.13);
+}
+
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4{
+  font-family:'DM Serif Display',Georgia,serif;
+  line-height:1.15;
+  font-weight:400;
+}
+
+/* ── UTILITIES ───────────────────────────────────────────── */
+.section-header{text-align:left;max-width:760px;margin:-20 auto 60px}
+.section-header h2{font-size:38px;color:var(--text);margin-bottom:14px; margin-left: 250px;}
+.section-header p{font-size:16px;color:var(--g600);line-height:1.7; margin-left: 250px;}
+.section-header.white h2,.section-header.white p{color:var(--white)}
+.section-header.white p{color:rgba(255,255,255,.55)}
+
+.btn-primary{
+  background:var(--navy);color:var(--white);border:none;
+  padding:13px 30px;border-radius:10px;font-size:15px;font-weight:600;
+  cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-primary:hover{background:var(--navy-2);transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,20,40,.18)}
+
+.btn-red{background:#2B3990}
+.btn-red:hover{background:var(--red-dark)}
+
+.btn-outline{
+  background:transparent;color:var(--navy);
+  border:1.5px solid var(--g200);
+  padding:13px 30px;border-radius:10px;font-size:15px;font-weight:600;
+  cursor:pointer;transition:border-color .2s,transform .2s;
+}
+.btn-outline:hover{border-color:var(--navy);transform:translateY(-2px)}
+
+/* ═══════════════════════════════════════════════════════════
+   STICKY HEADER
+   ═══════════════════════════════════════════════════════════ */
+.sticky-header{
+  position:fixed;top:0;left:0;right:0;
+  background:rgba(10,20,40,.97);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  z-index:1000;
+  transform:translateY(-100%);
+  transition:transform .38s cubic-bezier(.4,0,.2,1);
+}
+.sticky-header.visible{transform:translateY(0)}
+
+.sticky-container{
+  max-width:var(--maxw);margin:0 auto;
+  padding:14px var(--sp100);
+  display:flex;align-items:center;justify-content:space-between;gap:32px;
+}
+
+.sticky-logo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1;
+}
+
+.sticky-logo .l-name {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.sticky-logo .l-sub {
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  color: rgba(255,255,255,.45);
+  text-transform: uppercase;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.sticky-nav {
+  display: flex;
+  gap: 28px;
+}
+.sticky-nav{display:flex;gap:28px}
+.sticky-link{color:rgba(255,255,255,.8);font-size:14px;font-weight:500;transition:color .2s}
+.sticky-link:hover{color:var(--white)}
+
+.sticky-right{display:flex;align-items:center;gap:18px}
+.sticky-phone{color:rgba(255,255,255,.75);font-size:14px;font-weight:500}
+.sticky-cta{
+  background:var(--red);color:var(--white);border:none;
+  padding:9px 22px;border-radius:50px;font-size:13px;font-weight:600;
+  cursor:pointer;transition:background .2s,transform .2s;
+}
+.sticky-cta:hover{background:var(--red-dark);transform:translateY(-1px)}
+
+/* ═══════════════════════════════════════════════════════════
+   MAIN HEADER
+   ═══════════════════════════════════════════════════════════ */
+.main-header{
+  background:var(--white);
+  border-bottom:1px solid var(--g200);
+  position:relative;z-index:999;
+}
+
+.header-container{
+  max-width:var(--maxw);margin:0 auto;
+  padding:18px var(--sp100);
+  display:flex;align-items:center;justify-content:space-between;gap:40px;
+}
+
+.logo{display:flex;flex-direction:column;gap:3px;line-height:1}
+.logo .l-name{font-family:'DM Serif Display',serif;font-size:26px;color:var(--red);letter-spacing:.4px}
+.logo .l-sub{font-size:11px;letter-spacing:3px;color:var(--g600);text-transform:uppercase}
+
+.desktop-nav {
+  display: flex;
+  gap: 66px;
+  align-items: center;   /* FIXED */
+  margin-left: auto;     /* pushes nav to the right */
+}
+
+.nav-link {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+.nav-link:hover {
+  color: var(--red);
+}
+/* dropdown */
+.dropdown{position:relative}
+.dropdown-content{
+  display:none;position:absolute;
+  top:calc(100% + 14px);left:0;
+  background:var(--white);
+  border:1px solid var(--g200);border-radius:var(--r-md);
+  padding:8px 0;min-width:240px;
+  box-shadow:0 12px 40px rgba(10,20,40,.12);z-index:20;
+}
+.dropdown:hover .dropdown-content{display:block}
+.dropdown-content a{
+  display:block;padding:11px 20px;
+  color:var(--g800);font-size:14px;font-weight:500;
+  transition:background .15s,color .15s;
+}
+.dropdown-content a:hover{background:var(--g50);color:var(--red)}
+
+.header-right{display:flex;align-items:center;gap:14px}
+
+.contact-btn{
+  background: #2B3990;
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;              /* remove border */
+  box-shadow: none;          /* remove 3D shadow */
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-btn:hover{
+  background: #1f2c75;       /* slightly darker on hover */
+  transform: translateY(-1px);
+}
+
+.mobile-menu-btn{
+  display:none;flex-direction:column;gap:5px;
+  cursor:pointer;padding:4px;
+}
+.mobile-menu-btn span{
+  width:26px;height:2.5px;background:var(--text);
+  border-radius:2px;display:block;transition:.3s;
+}
+
+.mobile-menu{
+  display:none;flex-direction:column;
+  padding:16px var(--sp100) 20px;
+  border-top:1px solid var(--g200);gap:0;
+}
+.mobile-menu a{
+  padding:13px 0;font-size:15px;font-weight:500;
+  color:var(--text);border-bottom:1px solid var(--g100);
+}
+.mobile-cta{
+  margin-top:14px;background:var(--red);color:var(--white);
+  border:none;padding:13px 24px;border-radius:50px;
+  font-weight:600;cursor:pointer;align-self:flex-start;font-size:14px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════════════════════ */
+.hero{
+  background:var(--white);
+  min-height:calc(100vh - 70px);
+  display:flex;align-items:center;
+}
+
+.hero-container{
+  max-width:var(--maxw);margin:0 auto;
+  padding:60px var(--sp100);
+  display:grid;grid-template-columns:1.1fr 1fr;gap:72px;
+  align-items:center;width:100%;
+}
+
+/* image side */
+.hero-image-wrapper{position:relative}
+
+.hero-image{
+  border-radius:var(--r-xl);overflow:hidden;position:relative;
+  aspect-ratio:4/3;background:var(--g100);
+}
+.hero-image img{
+  width:100%;height:100%;object-fit:cover;
+}
+
+.hero-dots{
+  position:absolute;bottom:18px;left:50%;
+  transform:translateX(-50%);display:flex;gap:8px;z-index:2;
+}
+.dot{
+  width:10px;height:10px;background:rgba(255,255,255,.5);
+  border-radius:50%;cursor:pointer;border:none;
+  transition:all .3s;
+}
+.dot.active{background:var(--white);transform:scale(1.3)}
+
+.hero-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,.95);color:var(--text);
+  border:none;width:44px;height:44px;border-radius:50%;
+  font-size:22px;display:flex;align-items:center;justify-content:center;
+  cursor:pointer;box-shadow:0 2px 12px rgba(10,20,40,.15);
+  z-index:3;transition:background .2s,transform .2s;line-height:1;
+}
+.hero-arrow:hover{background:var(--white);transform:translateY(-50%) scale(1.08)}
+.hero-arrow.left{left:14px}
+.hero-arrow.right{right:14px}
+
+/* content side */
+.hero-content{display:flex;flex-direction:column;gap:22px}
+
+.cert-badges{display:flex;gap:8px;flex-wrap:wrap}
+.badge{
+  background:var(--g100);color:var(--g800);
+  border:1px solid var(--g200);border-radius:50px;
+  padding:5px 14px;font-size:12px;font-weight:600;letter-spacing:.4px;
+}
+.cert-pill {
+  display: inline-block;
+  background: #e5e7eb;   /* softer grey */
+  color: #374151;        /* softer text */
+  padding: 6px 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+.hero-title{font-size:42px;color:var(--text);line-height:1.12}
+
+.hero-features{display:flex;flex-direction:column;gap:9px}
+.hero-features li{
+  font-size:15px;color:var(--g600);
+  display:flex;align-items:center;gap:10px;
+}
+.hero-features li::before{
+  content:'';width:8px;height:8px;
+  background:var(--red);border-radius:50%;flex-shrink:0;
+}
+
+/* price box */
+.price-box{
+  background:var(--g50);border:1px solid var(--g200);
+  border-radius:var(--r-lg);padding:22px 24px;
+}
+.price-label{font-size:11px;color:var(--g400);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.price-value{font-size:26px;font-weight:700;color:var(--text);font-family:'DM Serif Display',serif;margin-bottom:14px}
+.price-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+.price-meta span{
+  font-size:12px;color:var(--g600);
+  background:#FEF3C7;border:1px solid #FEF3C7;
+  color:#92400E;
+  border-radius:6px;padding:4px 10px;
+}
+.cert-box {
+  background: var(--g200);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #333;
+  display: inline-block;
+  margin-top: 8px;
+}
+.btn-outline {
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+}
+/* CTA row */
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+.trusted-by {
+  text-align: center;
+  font-size: 14px;
+  color: var(--g400);
+  margin-top: 60px;
+
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--sp100);   /* VERY IMPORTANT */
+}
+.logo-strip {
+  display: flex;
+  justify-content: space-between;  /* spreads across full width */
+  align-items: center;
+  margin-top: 20px;
+}
+.logo-strip img {
+  height: 58px;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+.logo-strip img {
+  height: 98px;
+  opacity: 0.5;
+  filter: grayscale(0%);
+  transition: all 0.2s ease;
+  margin-bottom:60px;
+}
+/* ═══════════════════════════════════════════════════════════
+   BUILT TO LAST
+   ═══════════════════════════════════════════════════════════ */
+.built-section{
+  padding:var(--sp100);
+  background:var(--white);
+  border-top:1px solid var(--g200);
+  margin-bottom: 160px;
+}
+
+.features-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+  max-width:var(--maxw);margin:10 auto;padding:0 var(--sp100);margin-top: 30px;
+}
+
+.feature-card{
+  background:var(--white);border:1px solid var(--g200);
+  border-radius:var(--r-lg);padding:26px 24px;
+  transition:box-shadow .25s,transform .25s;
+}
+.feature-card:hover{box-shadow:var(--sh-hover);transform:translateY(-4px)}
+
+.feature-card .icon{
+  font-size:22px;margin-bottom:16px;
+  display:inline-flex;align-items:center;justify-content:center;
+  width:48px;height:48px;background:white;border-radius:var(--r-sm);
+  border:1px solid var(--g200);
+}
+.feature-card h3{font-size:16px;color:var(--text);margin-bottom:9px}
+.feature-card p{font-size:13.5px;color:var(--g600);line-height:1.65}
+
+/* ═══════════════════════════════════════════════════════════
+   TECHNICAL SPECIFICATIONS
+   ═══════════════════════════════════════════════════════════ */
+.specs-section{
+  background:var(--navy);
+  padding:var(--sp100);
+}
+
+.specs-container{max-width:1100px;margin:0 auto;text-align:left}
+.specs-section .section-header{margin-bottom:48px}
+
+.specs-table{
+  width:100%;border-collapse:collapse;
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:var(--r-lg);overflow:hidden;
+  text-align:left;
+}
+.specs-table thead tr{background:rgba(255,255,255,.06)}
+.specs-table th{
+  padding:14px 28px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:1.2px;
+  color:rgba(255,255,255,.4);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  font-family:'DM Sans',sans-serif;
+}
+.specs-table td{
+  padding:15px 28px;font-size:14px;
+  color:white;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.specs-table td:first-child{color:white;font-size:13px}
+.specs-table tbody tr:last-child td{border-bottom:none}
+.specs-table tbody tr:hover{background:rgba(255,255,255,.03)}
+
+.download-btn{
+  display:inline-flex;align-items:center;gap:28px;
+  margin-top:40px;background:var(--navy);color:var(--white); margin-left: 350px;
+  border:1px solid var(--white);padding:13px 32px;border-radius:10px;
+  font-size:14px;font-weight:600;cursor:pointer;
+  transition:background .2s,transform .2s;
+}
+.download-btn:hover{background:var(--g100);transform:translateY(-2px)}
+
+/* ═══════════════════════════════════════════════════════════
+   PORTFOLIO / SOLUTIONS
+   ═══════════════════════════════════════════════════════════ */
+.portfolio-section {
+  padding: var(--sp100);
+  background: var(--g50);
+  border-top: 1px solid var(--g200);
+}
+
+.portfolio-section .section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+  padding: 0;
+}
+
+.portfolio-section .section-header h2 {
+  font-size: 40px;
+  color: var(--text);
+  margin-bottom: 14px;
+  margin-left: 0;
+  font-weight: 700;
+}
+
+.portfolio-section .section-header p {
+  font-size: 16px;
+  color: var(--g600);
+  line-height: 1.7;
+  margin-left: 0;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--sp100);
+}
+
+.portfolio-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: box-shadow .25s, transform .25s;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 20px;  /* padding on top for text */
+}
+
+.portfolio-card:hover {
+  box-shadow: var(--sh-hover);
+  transform: translateY(-4px);
+}
+
+/* Title ABOVE image */
+.portfolio-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.portfolio-card-body h3 {
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 12px;
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.portfolio-card-body p {
+  font-size: 14px;
+  color: var(--g600);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+/* Image BELOW text */
+.portfolio-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+/* Learn More — grey bg, blue text, full width */
+.learn-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  background: var(--g100);
+  border: 1px solid var(--g200);
+  border-radius: var(--r-md);
+  color: #2B3990;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background .2s, border-color .2s;
+  width: 100%;
+  margin-top: auto;
+}
+
+.learn-more:hover {
+  background: var(--g200);
+  border-color: var(--g400);
+}
+
+/* Expert box — full width, large */
+.expert-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--maxw);
+  margin: 32px auto 0;
+  padding: 32px 48px;
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: var(--r-lg);
+}
+
+.expert-box .eb-text p:first-child {
+  font-size: 24px;
+  color: var(--text);
+  font-weight: 700;
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 6px;
+}
+
+.expert-box .eb-text p:first-child span {
+  color: #2B3990;
+}
+
+.expert-box .eb-text p:last-child {
+  font-size: 14px;
+  color: var(--g600);
+  margin-top: 0;
+}
+
+.expert-btn {
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background .2s;
+  flex-shrink: 0;
+}
+
+.expert-btn:hover { background: var(--navy-2); }
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 40px;
+  }
+
+  .expert-box {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 28px 32px;
+  }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 60px 0;
+  }
+
+  .portfolio-section .section-header {
+    padding: 0 24px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    gap: 16px;
+  }
+
+  .portfolio-card-body h3 {
+    font-size: 18px;
+  }
+
+  .portfolio-img {
+    height: 180px;
+  }
+
+  .expert-box {
+    margin: 24px 24px 0;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .expert-box .eb-text p:first-child {
+    font-size: 20px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TESTIMONIALS
+   ═══════════════════════════════════════════════════════════ */
+.testimonials-section {
+  padding: var(--sp100) 0;
+  background: var(--white);
+  border-top: 1px solid var(--g200);
+  overflow: hidden;
+}
+
+.testimonials-section .section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 60px;
+  padding: 0 var(--sp100);
+}
+
+.testimonials-section .section-header h2 {
+  font-size: 38px;
+  color: var(--text);
+  margin-bottom: 14px;
+  margin-left: 0;
+}
+
+.testimonials-section .section-header p {
+  font-size: 16px;
+  color: var(--g600);
+  line-height: 1.7;
+  margin-left: 0;
+}
+
+/* ── DESKTOP: horizontal scroll container ── */
+.testimonials-track-wrapper {
+  overflow: hidden;          /* clips the bleeding cards */
+  width: 100%;
+  position: relative;
+}
+
+.testimonials-grid {
+  display: flex;
+  gap: 20px;
+  /* Centre the 2 visible cards; partial cards peek on both sides */
+  padding: 12px calc(50% - 580px);   /* 580px ≈ one full card width × 2 / 2  */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+  /* Pull out past viewport so side cards bleed */
+  margin: 0 -80px;
+  padding-left: calc(50% - 580px + 80px);
+  padding-right: calc(50% - 580px + 80px);
+  width: calc(100% + 160px);
+}
+
+.testimonials-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: var(--r-lg);
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Each card takes ~half the visible area so 2 show fully */
+  min-width: 520px;
+  max-width: 520px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  min-height: 340px;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--sh-hover);
+  transform: translateY(-4px);
+}
+
+/* Quote mark: LEFT-aligned, large, navy, fully opaque */
+.quote-mark {
+  font-family: 'DM Serif Display', serif;
+  font-size: 56px;
+  color: var(--navy);
+  line-height: 0.8;
+  opacity: 1;
+  font-weight: 700;
+  text-align: left;
+  display: block;
+}
+
+/* Bold title */
+.testimonial-card .card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Body text */
+.testimonial-card .card-body {
+  font-size: 14px;
+  color: var(--g600);
+  line-height: 1.72;
+  flex: 1;
+  margin: 0;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--g200), var(--g400));
+  flex-shrink: 0;
+}
+
+.author strong {
+  display: block;
+  font-size: 15px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.author span {
+  font-size: 12px;
+  color: var(--g400);
+}
+
+/* ── MOBILE: single card, horizontal scroll ── */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 60px 0;
+    overflow: hidden;
+  }
+
+  .testimonials-section .section-header {
+    padding: 0 24px;
+    margin-bottom: 40px;
+  }
+
+  .testimonials-grid {
+    display: flex;
+    flex-direction: row;          /* horizontal, NOT vertical */
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    margin: 0;
+    width: 100%;
+    padding: 8px 24px;            /* left padding shows edge of first card */
+    padding-right: 24px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .testimonial-card {
+    min-width: 85vw;              /* one card nearly fills the screen */
+    max-width: 85vw;
+    scroll-snap-align: start;
+    padding: 28px 24px;
+    min-height: auto;
+  }
+}
+
+/* ── TABLET ── */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .testimonials-grid {
+    padding-left: calc(50% - 420px + 60px);
+    padding-right: calc(50% - 420px + 60px);
+    margin: 0 -60px;
+    width: calc(100% + 120px);
+  }
+
+  .testimonial-card {
+    min-width: 400px;
+    max-width: 400px;
+  }
+}
+/* ═══════════════════════════════════════════════════════════
+   CAROUSEL / GALLERY
+   ═══════════════════════════════════════════════════════════ */
+.carousel-wrapper {
+  position: relative;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 10px;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 15%, rgba(0,0,0,0.4) 50%, transparent 100%);
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 18px;
+  left: 28px;
+  right: 18px;
+  color: white;
+}
+
+.carousel-content h4 { font-size: 18px; margin-bottom: 6px; }
+.carousel-content p  { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.85); }
+/* CARD */
+.carousel-item {
+  position: relative;
+  min-width: 320px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+/* ACTIVE CARD */
+.carousel-item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* IMAGE */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8) 15%,
+    rgba(0,0,0,0.4) 50%,
+    transparent 100%
+  );
+}
+
+/* TEXT */
+.carousel-content {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  color: white;
+}
+
+.carousel-content h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.carousel-content p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+}
+
+/* BUTTONS */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  cursor: pointer;
+}
+
+.carousel-btn:hover {
+  background: #f3f4f6;
+}
+
+.carousel-btn:first-child {
+  left: -10px;
+}
+
+.carousel-btn:last-child {
+  right: -10px;
+}
+/* ═══════════════════════════════════════════════════════════
+   MANUFACTURING PROCESS
+   ═══════════════════════════════════════════════════════════ */
+
+.process-section {
+  background: #f3f4f6;
+  padding: var(--sp100);
+}
+
+.process-steps {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  margin: 0 0 36px 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.step {
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  transition: all .2s;
+  white-space: nowrap;
+  background: white;
+  border: 1.5px solid var(--g200);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.step.active {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
+.step:hover:not(.active) {
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.step:not(:last-child)::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--g200);
+  vertical-align: middle;
+  margin: 0 -2px;
+  position: relative;
+  z-index: 0;
+}
+
+.process-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 0;
+}
+
+.process-text h3 { font-size: 22px; color: var(--text) !important; margin-bottom: 14px; }
+.process-text p  { color: var(--g600) !important; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+
+#step-list { display: flex; flex-direction: column; gap: 10px; }
+#step-list li {
+  color: var(--text) !important;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#step-list li::before {
+  content: '✅';
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.process-image {
+  width: 100%;
+  border-radius: var(--r-xl);
+  aspect-ratio: 5/3;
+  object-fit: cover;
+}
+/* ═══════════════════════════════════════════════════════════
+   RESOURCES & DOWNLOADS
+   ═══════════════════════════════════════════════════════════ */
+.resources-section{
+  padding:var(--sp100);
+  background:var(--white);
+  border-top:1px solid var(--g200);
+}
+
+.resources-section .section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+  padding: 0;
+}
+
+.resources-section .section-header h2 {
+  font-size: 38px;
+  color: var(--text);
+  margin-bottom: 14px;
+  margin-left: 0;
+}
+
+.resources-section .section-header p {
+  font-size: 16px;
+  color: var(--g600);
+  line-height: 1.7;
+  margin-left: 0;
+}
+.downloads-grid{
+  max-width: 100%;
+  margin: 0 auto;
+  border: 1px solid var(--g200);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.download-item{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 28px;border-bottom:1px solid var(--g200);
+  transition:background .15s;
+}
+.download-item:last-child{border-bottom:none}
+.download-item:hover{background:var(--g50)}
+.download-item span{font-size:15px;color:var(--text);font-weight:500}
+.download-item button{
+  color: var(--navy);
+  background:none;border:none;
+  font-size:14px;font-weight:600;cursor:pointer;
+  display:flex;align-items:center;gap:6px;
+  transition:opacity .2s;padding:0;
+}
+.download-item button:hover{opacity:.7}
+/* ═══════════════════════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════════════════════ */
+.faq-section{
+  padding:var(--sp100);
+  background:var(--g50);
+  border-top:1px solid var(--g200);
+  margin-left: 50px;
+}
+
+.faq-list{
+  max-width:1560px;margin:0 auto 48px;
+  border:1px solid var(--g200);border-radius:var(--r-lg);overflow:hidden;
+}
+
+.faq-item{
+  border-bottom:1px solid var(--g200);background:var(--white);
+}
+.faq-item:last-child{border-bottom:none}
+
+.faq-item summary{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 24px;cursor:pointer;list-style:none;
+  font-size:15px;font-weight:500;color:var(--text);
+  transition:background .15s;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:'+';font-size:22px;color:var(--g400);
+  flex-shrink:0;transition:transform .2s;margin-left:16px;
+}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{background:var(--g50)}
+.faq-item[open] summary{background:var(--g50)}
+
+.faq-item p{
+  padding:0 24px 18px;font-size:14px;
+  color:var(--g600);line-height:1.7;
+}
+
+/* catalogue */
+.catalogue-box {
+  max-width: var(--maxw);
+  margin: 60px auto;
+  padding: 24px 28px;
+
+  background: #f3f4f6; /* light grey like image */
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.catalogue-box h3 {
+  font-size: 20px;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.catalogue-box p {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.catalogue-form {
+  display: flex;
+  flex-direction: column;  
+  gap: 12px;
+  width: 460px;            
+}
+
+/* INPUT */
+.catalogue-form input {
+  height: 44px;
+  padding: 0 16px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+  font-size: 14px;
+  outline: none;
+  min-width: 240px;
+}
+
+.catalogue-form input::placeholder {
+  color: #9ca3af;
+}
+
+/* BUTTON */
+.catalogue-form button {
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 10px;
+  border: none;
+
+  background: #2B3990; /* EXACT BLUE */
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.catalogue-form button:hover {
+  background: #1f2c75;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FINAL CTA
+   ═══════════════════════════════════════════════════════════ */
+.final-cta{
+  padding:var(--sp100);
+  background:var(--white);
+  border-top:1px solid var(--g200);
+}
+.cta-container{
+  max-width:1060px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  background: #1e2a4a;
+  border-radius:24px;overflow:hidden;
+}
+
+.cta-left{
+  padding:56px 52px;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.cta-left h2{
+  font-size:34px;
+  color:var(--white);
+  margin-bottom:16px;
+  font-weight:700;
+}
+.cta-left>p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px}
+.cta-left hr{border:none;border-top:1px solid rgba(255,255,255,.1);margin-bottom:18px}
+.cta-left .contact-info{font-size:13px;color:rgba(255,255,255,.6)}
+.cta-left .contact-info strong{color:rgba(255,255,255,.9)}
+.cta-left .contact-info a{color:rgba(255,255,255,.9);text-decoration:underline}
+
+/* White card for the form */
+.cta-form{
+  padding:40px 44px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  background: #ffffff;
+  margin: 32px;
+  border-radius: 16px;
+}
+.cta-form h3{
+  font-size:16px;
+  color: var(--text);
+  margin-bottom:2px;
+  font-family:'DM Sans',sans-serif;
+  font-weight:600;
+}
+
+.cta-form input,.cta-form select{
+  padding:12px 16px;border-radius:var(--r-sm);
+  border:1px solid var(--g200);
+  background: var(--white);
+  color: var(--text);
+  font-size:14px;outline:none;
+  transition:border-color .2s;
+}
+.cta-form input::placeholder{color:var(--g400)}
+.cta-form input:focus{border-color: var(--navy)}
+.cta-form select{color: var(--text); background: var(--white);}
+.cta-form select option{background:var(--white); color: var(--text);}
+
+.phone-input{display:flex;gap:8px}
+.phone-input select{width:88px;flex-shrink:0;cursor:pointer}
+
+.submit-btn{
+  width:100%;background: var(--navy);color:var(--white);
+  border:none;padding:14px;border-radius:var(--r-sm);
+  font-size:15px;font-weight:600;cursor:pointer;
+  transition:background .2s;margin-top:4px;
+}
+.submit-btn:hover{background:var(--navy-2)}
+
+/* Responsive fixes */
+@media(max-width:1024px){
+  .cta-container{grid-template-columns:1fr}
+  .cta-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:48px 40px 40px}
+  .cta-form{margin: 24px; padding:32px 28px;}
+}
+
+@media(max-width:768px){
+  .cta-left{padding:36px 28px 32px}
+  .cta-form{margin: 16px; padding:28px 20px;}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+.footer{
+  background: var(--g50);
+  border-top: 1px solid var(--g200);
+}
+
+/* brand banner — rounded box */
+.footer-banner{
+  margin: 32px var(--sp100);
+  padding: 28px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--g200);
+  border-radius: 16px;
+  background: var(--white);
+}
+
+.footer-banner-tag{
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--text);
+  text-align: right;
+  line-height: 1.4;
+}
+.footer-banner-tag span{ color: #2B3990; }
+
+/* columns — 4 cols, no filler */
+.footer-container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 48px var(--sp100);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 1.4fr 1.6fr;
+  gap: 48px;
+}
+
+.footer-col strong{
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: .8px;
+  font-family: 'DM Sans', sans-serif;
+}
+.footer-col a{
+  display: block;
+  color: var(--g600);
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: color .2s;
+}
+.footer-col a:hover{ color: #2B3990; }
+
+/* contact column with icons */
+.footer-col.contact .contact-row{
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--g600);
+  line-height: 1.5;
+}
+.footer-col.contact .contact-row svg{
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--g600);
+}
+.footer-col.contact .contact-row a{
+  display: inline;
+  color: var(--g600);
+  margin-bottom: 0;
+}
+.footer-col.contact .contact-row a:hover{ color: #2B3990; }
+
+/* social icons */
+.social{ display: flex; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--g200); }
+.social a{
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  background: var(--white);
+  border-radius: 50%;
+  border: 1px solid var(--g200);
+  color: var(--text) !important;
+  margin-bottom: 0 !important;
+  transition: background .2s, color .2s, border-color .2s !important;
+}
+.social a:hover{ background: #2B3990; color: var(--white) !important; border-color: #2B3990; }
+.social a svg{ width: 16px; height: 16px; }
+
+/* bottom bar */
+.footer-bottom{
+  border-top: 1px solid var(--g200);
+  padding: 20px var(--sp100);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--g400);
+}
+.footer-bottom-links a{ color: var(--g400); margin-left: 32px; transition: color .2s; }
+.footer-bottom-links a:hover{ color: var(--text); }
+
+@media(max-width: 1024px){
+  .footer-container{ grid-template-columns: repeat(2, 1fr); }
+  .footer-banner{ margin: 24px 40px; }
+}
+@media(max-width: 768px){
+  .footer-container{ grid-template-columns: 1fr; padding: 40px 24px; }
+  .footer-banner{ margin: 20px 24px; flex-direction: column; gap: 16px; text-align: center; }
+  .footer-banner-tag{ text-align: center; }
+  .footer-bottom{ flex-direction: column; gap: 12px; text-align: center; padding: 18px 24px; }
+  .footer-bottom-links a{ margin-left: 16px; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+@media(max-width:1280px){
+  :root{--sp100:60px}
+  .testimonials-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:1024px){
+  .hero-container{grid-template-columns:1fr;gap:44px;text-align:center}
+  .cert-badges,.hero-cta,.logo-strip{justify-content:center}
+  .hero-features li{justify-content:center}
+  .desktop-nav{display:none}
+  .mobile-menu-btn{display:flex}
+  .features-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .process-content{grid-template-columns:1fr}
+  .footer-container{grid-template-columns:repeat(2,1fr)}
+  .cta-container{grid-template-columns:1fr}
+  .cta-left{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:48px 40px 40px}
+  .cta-form{padding:40px}
+  .catalogue-box{flex-direction:column;text-align:center}
+  .expert-box{flex-direction:column;text-align:center;gap:16px}
+}
+
+@media(max-width:768px){
+  :root{--sp100:24px}
+  .features-grid,.portfolio-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .hero-title{font-size:32px}
+  .section-header h2{font-size:28px}
+  .footer-container{grid-template-columns:1fr}
+  .footer-banner{flex-direction:column;gap:16px;text-align:center}
+  .footer-banner-tag{text-align:center}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center;padding:18px 24px}
+  .process-steps{border-radius:16px;padding:8px;gap:4px}
+  .step{padding:7px 12px;font-size:12px}
+  .cta-left{padding:36px 28px 32px}
+  .cta-form{padding:32px 28px}
+  .catalogue-form{flex-direction:column;width:100%}
+  .catalogue-form input{min-width:0;width:100%}
+  .mobile-menu{padding:16px 24px 20px}
+}
+.breadcrumb {
+  max-width: var(--maxw);
+  margin: 30px auto 10px; /* space below header */
+  padding: 0 var(--sp100);
+  font-size: 13px;
+  color: var(--g600);
+}
+
+.breadcrumb a {
+  color: var(--g600);
+  transition: color .2s;
+}
+
+.breadcrumb a:hover {
+  color: var(--red);
+}
+
+.breadcrumb span {
+  margin: 0 6px;
+}
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     STICKY HEADER
+     ══════════════════════════════════════════════════════════ -->
+<div id="sticky-header" class="sticky-header">
+  <div class="sticky-container">
+    <a href="#" class="sticky-logo">
+      <span class="l-name">
+    </a>
+    <nav class="sticky-nav">
+      <a href="#about" class="sticky-link">About Us</a>
+      <a href="#products" class="sticky-link">Products</a>
+      <a href="#specs" class="sticky-link">Specifications</a>
+      <a href="#contact" class="sticky-link">Contact Us</a>
+    </nav>
+    <div class="sticky-right">
+      <a href="tel:+919999999999" class="sticky-phone">+91-XXX-XXX-XXXX</a>
+      <button onclick="requestQuote()" class="sticky-cta">Get Custom Quote</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     MAIN HEADER
+     ══════════════════════════════════════════════════════════ -->
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo">
+    <span class="l-name"><img src="ce5a170c60004b853d7c68fb0ec5bf7ee4e75417.png" alt="Mangalam Logo" class="logo-img"></span>
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="#about" class="nav-link">About Us</a>
+      <div class="dropdown">
+        <a href="#products" class="nav-link">Products ▾</a>
+        <div class="dropdown-content">
+          <a href="#">HDPE Pipes &amp; Coils</a>
+          <a href="#">HDPE Fittings &amp; Accessories</a>
+          <a href="#">PE-RT Heating Pipes</a>
+          <a href="#">Two-For-One Twisters</a>
+          <a href="#">Ring Twisting Machines</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-right">
+      <button onclick="contactUs()" class="contact-btn">Contact Us</button>
+      <div class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <a href="#about">About Us</a>
+    <a href="#products">Products</a>
+    <button onclick="requestQuote()" class="mobile-cta">Get Custom Quote</button>
+  </div>
+</header>
+<div class="breadcrumb">
+  <a href="#">Products</a>
+  <span>›</span>
+  <span>Two For One Twister</span>
+</div>
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <div class="hero-container">
+
+    <!-- Left: image carousel -->
+    <div class="hero-image-wrapper">
+      <div class="hero-image">
+        <img src="b2bbeacab99354ed8115ebeb93ea4f25afce46fb.jpg"
+             alt="HDPE Pipe Installation" id="hero-main-image">
+        
+        <button class="hero-arrow left"  aria-label="Previous">&#8249;</button>
+        <button class="hero-arrow right" aria-label="Next">&#8250;</button>
+      </div>
+    </div>
+
+    <!-- Right: content -->
+    <div class="hero-content">
+      <div class="cert-badges">
+        <div class="badge">BIS Certified</div>
+        <div class="badge">ISO Certified</div>
+        <div class="badge">CE Certified</div>
+      </div>
+
+      <h1 class="hero-title">Premium HDPE Pipes &amp; Coils for Modern Infrastructure</h1>
+
+      <ul class="hero-features">
+        <li>Leak-Proof Fusion Joints</li>
+        <li>Superior Chemical Resistance</li>
+        <li>50+ Year Service Life</li>
+        <li>Flexible Installation</li>
+      </ul>
+
+      <div class="price-box">
+        <div class="price-label">Price Range</div>
+        <div class="price-value">₹4,80,000 – 7,90,000</div>
+        <div class="price-meta">
+          <span>Shipping: 6–12 days</span>
+          <span>Returns:If returned within 7 days</span>
+        </div>
+        <div class="cert-pill">
+  Certifications: ISO Certified, BIS Certified
+</div>
+      </div>
+
+      <div class="hero-cta">
+        <button onclick="requestQuote()" class="btn-primary btn-red">Get Custom Quote</button>
+        <button onclick="downloadDatasheet()" class="btn-outline">View Technical Specs ›</button>
+      </div>
+
+    
+</div>
+ 
+</section>
+ <div class="trusted-by"> 
+  Trusted by Hundreds of Companies Globally
+
+  <div class="logo-strip">
+    <img src="62973e4dd846652170f3636303e02a5fc1d1b59e.png" alt="EUROFLEX">
+    <img src="62973e4dd846652170f3636303e02a5fc1d1b59e.png" alt="EUROFLEX">
+    <img src="62973e4dd846652170f3636303e02a5fc1d1b59e.png" alt="EUROFLEX">
+    <img src="62973e4dd846652170f3636303e02a5fc1d1b59e.png" alt="EUROFLEX">
+    <img src="62973e4dd846652170f3636303e02a5fc1d1b59e.png" alt="EUROFLEX">
+  </div>
+  </div>
+<!-- ══════════════════════════════════════════════════════════
+     TECHNICAL SPECIFICATIONS
+     ══════════════════════════════════════════════════════════ -->
+<section class="specs-section" id="specs">
+  <div class="specs-container">
+    <div class="section-header white">
+      <h2>Technical Specifications at a Glance</h2>
+      <p>Comprehensive performance data demonstrating our commitment to quality and engineering excellence.</p>
+    </div>
+
+    <table class="specs-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Specification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Pipe Diameter Range</td><td>20mm to 1600mm (3/4″ to 63″)</td></tr>
+        <tr><td>Pressure Ratings</td><td>PN 2.5, PN 4, PN 6, PN 8, PN 10, PN 12.5, PN 16</td></tr>
+        <tr><td>Standard Dimension Ratio</td><td>SDR 33, SDR 26, SDR 21, SDR 17, SDR 13.6, SDR 11</td></tr>
+        <tr><td>Operating Temperature</td><td>−40°C to +80°C (−40°F to +176°F)</td></tr>
+        <tr><td>Service Life</td><td>50+ Years (at 20°C, PN 10)</td></tr>
+        <tr><td>Material Density</td><td>0.95 – 0.96 g/cm³</td></tr>
+        <tr><td>Certification Standards</td><td>IS 5984, ISO 4427, ASTM D3035</td></tr>
+        <tr><td>Joint Type</td><td>Butt Fusion, Electrofusion, Mechanical</td></tr>
+        <tr><td>Coil Lengths</td><td>Up to 500m (for smaller diameters)</td></tr>
+        <tr><td>Country of Origin</td><td>🇮🇳 India</td></tr>
+      </tbody>
+    </table>
+
+    <button onclick="downloadDatasheet()" class="download-btn">
+      ↓ Download Full Technical Datasheet
+    </button>
+  </div>
+</section>
+<!-- BUILT TO LAST -->
+<section class="built-section" id="about">
+  <div class="section-header">
+    <h2>Built to Last. Engineered to Perform.</h2>
+    <p>From bulk bags to technical threads, Meera delivers precision solutions for every stage of your packaging process.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="icon"><img src="Bag.png"
+             alt="Superior Chemical Resistance" id="hero-main-image"></div>
+      <h3>Superior Chemical Resistance</h3>
+      <p>HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.</p>
+    </div>
+    <div class="feature-card">
+  <div class="icon">
+    <img src="Vector.png" alt="Exceptional Flexibility & Durability">
+  </div>
+  <h3>Exceptional Flexibility &amp; Durability</h3>
+  <p>
+    HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.
+  </p>
+</div>
+
+<div class="feature-card">
+  <div class="icon">
+    <img src="Vector-1.png" alt="Leak-Proof Fusion Welding">
+  </div>
+  <h3>Leak-Proof Fusion Welding</h3>
+  <p>
+    HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.
+  </p>
+</div>
+
+<div class="feature-card">
+  <div class="icon">
+    <img src="Vector-2.png" alt="Cost Effective">
+  </div>
+  <h3>Cost-Effective Long-Term Solution</h3>
+  <p>
+    HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.
+  </p>
+</div>
+
+<div class="feature-card">
+  <div class="icon">
+    <img src="Vector-2.png" alt="Environmentally Sustainable">
+  </div>
+  <h3>Environmentally Sustainable</h3>
+  <p>
+    HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.
+  </p>
+</div>
+
+<div class="feature-card">
+  <div class="icon">
+    <img src="Vector-2.png" alt="Certified Quality Assurance">
+  </div>
+  <h3>Certified Quality Assurance</h3>
+  <p>
+    HDPE pipes resist a wide range of chemicals, acids, and alkalis. Unlike metal pipes, they won't corrode, rust, or scale, ensuring pure water quality and extended service life in aggressive environments.
+  </p>
+</div>
+
+ 
+  </div>
+</section>
+ <div style="text-align:center">
+    <button onclick="requestQuote()" class="btn-primary btn-red" style="margin-bottom:50px;margin-top:-100px; padding:14px 40px;font-size:15px">Request a Quote</button>
+<!-- ══════════════════════════════════════════════════════════
+     FAQ
+     ══════════════════════════════════════════════════════════ -->
+<section class="faq-section" id="faq">
+  <div class="section-header">
+    <h2>Frequently Asked Questions</h2>
+  </div>
+
+  <div class="faq-list">
+    <details class="faq-item">
+      <summary>What is the purpose of HDPE pipes in infrastructure?</summary>
+      <p>HDPE pipes are designed to transport water, gas, and other fluids with precision, allowing for complex routing that is essential in modern infrastructure and manufacturing processes.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What are the benefits of using HDPE pipes over metal pipes?</summary>
+      <p>Lightweight, corrosion-resistant, excellent chemical resistance, longer service life (50+ years), leak-proof fusion joints, and significantly lower installation costs.</p>
+    </details>
+    <details class="faq-item">
+      <summary>How are HDPE pipes manufactured?</summary>
+      <p>Through a high-precision extrusion process where PE100 grade material is melted and forced through a die, then cooled, sized, marked, and cut to specification under strict quality control.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What are the common applications of HDPE pipes?</summary>
+      <p>Water distribution, irrigation, gas distribution, industrial fluid handling, mining, telecommunications conduits, and sewerage systems.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can HDPE pipes be customized?</summary>
+      <p>Yes. We offer full customization including diameter (20mm–1600mm), wall thickness, pressure rating, coil length, and surface finish to meet your exact project requirements.</p>
+    </details>
+  </div>
+
+  <!-- Catalogue CTA -->
+  <div class="catalogue-box">
+    <div>
+      <h3>Want us to email the entire catalogue?</h3>
+      <p>Enter your email and an expert will share the catalogue with you.</p>
+    </div>
+    <div class="catalogue-form">
+      <input type="email" id="catalogue-email" placeholder="Email Address">
+      <button onclick="sendCatalogue()">Request Catalogue</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     CAROUSEL — VERSATILE APPLICATIONS
+     ══════════════════════════════════════════════════════════ -->
+<section class="carousel-section" id="products">
+
+  <div class="section-header">
+    <h2>Versatile Applications Across Industries</h2>
+    <p>
+      From technical textiles to packaging materials, our precision-engineered machinery delivers superior performance across diverse applications.
+    </p>
+  </div>
+
+  <div class="carousel-wrapper">
+
+    <button class="carousel-btn" onclick="prevSlide()">&#8249;</button>
+
+    <div class="carousel" id="carousel">
+
+      <!-- CARD 1 -->
+      <div class="carousel-item">
+        <img src="Rectangle 42108.png" class="carousel-image">
+        <div class="overlay"></div>
+        <div class="carousel-content">
+          <h4>Fishnet Manufacturing</h4>
+          <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="carousel-item">
+        <img src="Rectangle 42108.png" class="carousel-image">
+        <div class="overlay"></div>
+        <div class="carousel-content">
+          <h4>Packaging Solutions</h4>
+          <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="carousel-item">
+        <img src="Rectangle 42108.png" class="carousel-image">
+        <div class="overlay"></div>
+        <div class="carousel-content">
+          <h4>Industrial Piping</h4>
+          <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="carousel-item">
+        <img src="Rectangle 42108.png" class="carousel-image">
+        <div class="overlay"></div>
+        <div class="carousel-content">
+          <h4>Agricultural Irrigation</h4>
+          <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="carousel-item">
+        <img src="Rectangle 42108.png" class="carousel-image">
+        <div class="overlay"></div>
+        <div class="carousel-content">
+          <h4>Water Distribution</h4>
+          <p>High-performance twisting solutions for packaging yarn, strapping materials, and reinforcement threads used in modern packaging applications.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-btn" onclick="nextSlide()">&#8250;</button>
+
+  </div>
+
+</section>
+<!-- ══════════════════════════════════════════════════════════
+     MANUFACTURING PROCESS
+     ══════════════════════════════════════════════════════════ -->
+<section class="process-section">
+  <div style="text-align:center;max-width:760px;margin:0 auto 48px;">
+    <h2 style="font-size:38px;color:#1a2535;margin-bottom:14px;">Advanced HDPE Pipe Manufacturing Process</h2>
+    <p style="font-size:16px;color:#4b5563;line-height:1.7;">Our state-of-the-art extrusion technology ensures consistent quality, optimal material properties, and dimensional accuracy in every pipe we manufacture.</p>
+  </div>
+
+  <div style="max-width:1100px;margin:0 auto;background:white;border:1px solid #e2e6ed;border-radius:20px;padding:40px 48px;">
+    <div class="process-steps">
+      <div class="step active" onclick="selectStep(0)">Raw Material</div>
+      <div class="step" onclick="selectStep(1)">Extrusion</div>
+      <div class="step" onclick="selectStep(2)">Cooling</div>
+      <div class="step" onclick="selectStep(3)">Sizing</div>
+      <div class="step" onclick="selectStep(4)">Quality Control</div>
+      <div class="step" onclick="selectStep(5)">Marking</div>
+      <div class="step" onclick="selectStep(6)">Cutting</div>
+      <div class="step" onclick="selectStep(7)">Packaging</div>
+    </div>
+
+    <div class="process-content">
+      <div class="process-text">
+        <h3 id="step-title" style="color:#1a2535;">High-Grade Raw Material Selection</h3>
+        <p id="step-desc" style="color:#4b5563;">PE100 grade resin is carefully selected and tested for melt flow index, density, and tensile strength before entering production.</p>
+        <ul id="step-list">
+          <li style="color:#1a2535;">PE100 grade material</li>
+          <li style="color:#1a2535;">Optimal molecular weight distribution</li>
+        </ul>
+      </div>
+      <img id="process-image"
+           src="Rectangle 42108.png"
+           alt="Manufacturing process" class="process-image">
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════════════════
+     TESTIMONIALS
+     ══════════════════════════════════════════════════════════ -->
+<section class="testimonials-section">
+  <div class="section-header">
+    <h2>Trusted Performance. Proven Results</h2>
+    <p>From innovative Two-For-One Twisters to specialized heat setting machines, we deliver complete solutions for modern textile manufacturing.</p>
+  </div>
+
+  <div class="testimonials-track-wrapper">
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="card-title">Revolutionized our FIBC production efficiency!</p>
+        <p class="card-body">Meera Industries' TFO machines have optimized our FIBC production efficiency. Precision engineering delivers the consistent yarn strength critical for our bulk container applications.</p>
+        <div class="author">
+          <div class="avatar"></div>
+          <div>
+            <strong>Johann Mueller</strong>
+            <span>Production Director</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="card-title">Excellent support for specialized applications.</p>
+        <p class="card-body">The durability and performance of Meera's fishnet processing equipment has significantly improved our marine product quality. Excellent support for specialized applications.</p>
+        <div class="author">
+          <div class="avatar"></div>
+          <div>
+            <strong>Carlos Mendoza</strong>
+            <span>Operations Manager</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="card-title">Excellent support for specialized applications.</p>
+        <p class="card-body">The durability and performance of Meera's fishnet processing equipment has significantly improved our marine product quality. Excellent support for specialized applications and exceptional after-sales service.</p>
+        <div class="author">
+          <div class="avatar"></div>
+          <div>
+            <strong>Anita Sharma</strong>
+            <span>Plant Manager</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p class="card-title">Provides the exact specifications we need!</p>
+        <p class="card-body">For our technical textile applications, Meera's specialized machinery provides the exact specifications we need. Their understanding of automotive textile requirements is exceptional.</p>
+        <div class="author">
+          <div class="avatar"></div>
+          <div>
+            <strong>Rajesh Kumar</strong>
+            <span>Manufacturing Head</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════════════════
+     PORTFOLIO
+     ══════════════════════════════════════════════════════════ -->
+<section class="portfolio-section" id="portfolio">
+  <div class="section-header">
+    <h2>Complete Piping Solutions Portfolio</h2>
+    <p>From innovative Two-For-One Twisters to specialized heat setting machines, we deliver complete solutions for modern infrastructure.</p>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-body">
+        <h3>HDPE Fittings &amp; Accessories</h3>
+        <p>Complete range of electrofusion and butt fusion fittings, including elbows, tees, reducers, and couplers for seamless pipe connections.</p>
+      </div>
+      <img src="smart-indian-engineer-man-wearing-safety-helmet-doing-stock-tick-check-cardboard-stock-product-management-factory-warehouse-background 1-2.png" alt="HDPE Fittings & Accessories" class="portfolio-img">
+      <a href="#" class="learn-more">Learn More</a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-body">
+        <h3>Professional Installation Services</h3>
+        <p>Expert installation and fusion welding services ensuring optimal system performance, compliance with standards, and long-term reliability.</p>
+      </div>
+      <img src="smart-indian-engineer-man-wearing-safety-helmet-doing-stock-tick-check-cardboard-stock-product-management-factory-warehouse-background 1-1.png" alt="Professional Installation Services" class="portfolio-img">
+      <a href="#" class="learn-more">Learn More</a>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-card-body">
+        <h3>PE-RT Heating Pipes</h3>
+        <p>Polyethylene of Raised Temperature resistance pipes ideal for underfloor heating, radiator connections, and hot water applications.</p>
+      </div>
+      <img src="smart-indian-engineer-man-wearing-safety-helmet-doing-stock-tick-check-cardboard-stock-product-management-factory-warehouse-background 1-2.png" alt="PE-RT Heating Pipes" class="portfolio-img">
+      <a href="#" class="learn-more">Learn More</a>
+    </div>
+
+  </div>
+
+  <div class="expert-box" style="padding: 32px 48px; max-width: calc(var(--maxw)); margin-left: auto; margin-right: auto;">
+    <div class="eb-text">
+      <p>Didn't find what <span>you're looking for?</span></p>
+      <p>Talk to our experts for custom solutions and tailored guidance.</p>
+    </div>
+    <button onclick="talkToExpert()" class="expert-btn">📞 Talk to an Expert</button>
+  </div>
+
+</section>
+<!-- ══════════════════════════════════════════════════════════
+     RESOURCES & DOWNLOADS
+     ══════════════════════════════════════════════════════════ -->
+<section class="resources-section" id="resources">
+  <div class="section-header">
+    <h2>Resources &amp; Downloads</h2>
+    <p>Get all the technical documentation and resources you need to make informed decisions about our HDPE piping solutions.</p>
+  </div>
+
+  <div class="downloads-grid">
+    <div class="download-item">
+      <span>HDPE Pipe Installation Manual (PDF)</span>
+      <button onclick="downloadFile('installation')">Download PDF ↓</button>
+    </div>
+    <div class="download-item">
+      <span>Maintenance &amp; Inspection Handbook (PDF)</span>
+      <button onclick="downloadFile('maintenance')">Download PDF ↓</button>
+    </div>
+    <div class="download-item">
+      <span>Engineering Specifications Sheet (PDF)</span>
+      <button onclick="downloadFile('specs')">Download PDF ↓</button>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════════════════
+     FINAL CTA / CONTACT
+     ══════════════════════════════════════════════════════════ -->
+<section class="final-cta" id="contact">
+  <div class="cta-container">
+    <div class="cta-left">
+      <h2>Ready to Transform Your Infrastructure?</h2>
+      <p>Get a personalized consultation and quote for HDPE piping solutions tailored to your specific project requirements.</p>
+      <hr>
+      <p class="contact-info">
+        For immediate assistance, call <strong>+91-XXX-XXX-XXXX</strong>. You can also send us a quick email at <strong><a href="mailto:info@mangalamhdpe.com">info@mangalamhdpe.com</a></strong>
+      </p>
+    </div>
+    <div class="cta-form">
+      <h3>Contact Us Today</h3>
+      <input type="text"  id="name"    placeholder="Full Name">
+      <input type="text"  id="company" placeholder="Company Name">
+      <input type="email" id="email"   placeholder="Email Address">
+      <div class="phone-input">
+        <select><option>+91</option><option>+1</option><option>+44</option></select>
+        <input type="tel" id="phone" placeholder="Your phone number">
+      </div>
+      <button onclick="submitQuoteForm()" class="submit-btn">Request Custom Quote</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+
+  <div class="footer-banner">
+    <div class="logo">
+      <img src="ce5a170c60004b853d7c68fb0ec5bf7ee4e75417.png" alt="Mangalam Logo" class="logo-img">
+    </div>
+    <div class="footer-banner-tag">
+      Premium <span>HDPE Pipes &amp; Fittings</span><br>
+      <span>Manufacturer</span> in South India
+    </div>
+  </div>
+
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <strong>About Us</strong>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Press</a>
+    </div>
+
+    <div class="footer-col">
+      <strong>Categories</strong>
+      <a href="#">Packaging Industry Solutions</a>
+      <a href="#">Fishnet Manufacturing</a>
+      <a href="#">PPMF/Tapes and Twines</a>
+      <a href="#">FIBC and Woven Sack</a>
+      <a href="#">Carpet and Rugs Industry</a>
+      <a href="#">Technical Textiles</a>
+    </div>
+
+    <div class="footer-col">
+      <strong>Products</strong>
+      <a href="#">Two For One Twister</a>
+      <a href="#">TPRS Twister Machine</a>
+      <a href="#">Ring Twisting Machines</a>
+      <a href="#">Covering Machines</a>
+      <a href="#">Heat Setting Equipment</a>
+      <a href="#">Servo Controlled Winders</a>
+    </div>
+
+    <div class="footer-col contact">
+      <strong>Contact</strong>
+
+      <div class="contact-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>2126, Road No. 2, GIDC Sachin, Surat – 394 230 Gujarat, India</span>
+      </div>
+
+      <div class="contact-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.54 3.5 2 2 0 0 1 3.5 1.32h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6 6l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg>
+        <a href="tel:+919999999999">+91-XXX-XXX-XXXX</a>
+      </div>
+
+      <div class="contact-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:info@meeraind.com">info@meeraind.com</a>
+      </div>
+
+      <div class="contact-row">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+        <a href="mailto:support@meeraind.com">support@meeraind.com</a>
+      </div>
+
+      <div class="social">
+        <a href="#" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="X / Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.26 5.632 5.904-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>Copyright © 2025 Meera Industries Limited | All Rights Reserved</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Sitemap</a>
+    </div>
+  </div>
+
+</footer>
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT
+     ══════════════════════════════════════════════════════════ -->
+<script>
+
+
+/* ── Sticky header ─────────────────────────────────────── */
+let lastScrollY = 0;
+const stickyHeader = document.getElementById('sticky-header');
+
+function handleStickyHeader() {
+  const y = window.scrollY;
+  const fold = window.innerHeight;
+
+  if (y > fold) {
+    stickyHeader.classList.toggle('visible', y < lastScrollY);
+  } else {
+    stickyHeader.classList.remove('visible');
+  }
+  lastScrollY = y;
+}
+window.addEventListener('scroll', handleStickyHeader, { passive: true });
+
+/* ── Mobile menu ───────────────────────────────────────── */
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const open  = menu.style.display === 'flex';
+  menu.style.display = open ? 'none' : 'flex';
+}
+
+/* ── Hero image carousel ───────────────────────────────── */
+let heroIndex = 0;
+const heroImages = [
+  "b2bbeacab99354ed8115ebeb93ea4f25afce46fb.jpg"
+];
+
+function changeHeroImage(index) {
+  heroIndex = index;
+  const img = document.getElementById('hero-main-image');
+  img.style.opacity = '0';
+  setTimeout(() => {
+    img.src = heroImages[heroIndex];
+    img.style.opacity = '1';
+  }, 200);
+  document.querySelectorAll('.hero-dots .dot').forEach((d, i) => {
+    d.classList.toggle('active', i === heroIndex);
+  });
+}
+
+function nextHeroImage() { changeHeroImage((heroIndex + 1) % heroImages.length); }
+function prevHeroImage() { changeHeroImage((heroIndex - 1 + heroImages.length) % heroImages.length); }
+
+// Smooth fade transition
+document.getElementById('hero-main-image').style.transition = 'opacity .25s ease';
+
+// Auto-rotate
+setInterval(() => {
+  if (document.visibilityState === 'visible') nextHeroImage();
+}, 5000);
+
+/* ── Product carousel ──────────────────────────────────── */
+let carouselIndex = 0;
+const carousel = document.getElementById('carousel');
+const CARD_W = 300 + 18; // min-width + gap
+
+function nextSlide() {
+  carouselIndex++;
+  carousel.scrollBy({ left: CARD_W, behavior: 'smooth' });
+}
+function prevSlide() {
+  carouselIndex--;
+  carousel.scrollBy({ left: -CARD_W, behavior: 'smooth' });
+}
+
+/* ── Zoom preview ──────────────────────────────────────── */
+function showZoom(el) {
+  const p = document.getElementById('zoom-preview');
+  document.getElementById('zoom-image').src = el.src;
+  p.style.opacity = '1';
+  p.style.display = 'block';
+  document.addEventListener('mousemove', moveZoom);
+}
+function moveZoom(e) {
+  const p = document.getElementById('zoom-preview');
+  p.style.left = (e.pageX + 24) + 'px';
+  p.style.top  = Math.max(0, e.pageY - p.offsetHeight / 2) + 'px';
+}
+function hideZoom() {
+  const p = document.getElementById('zoom-preview');
+  p.style.opacity = '0';
+  setTimeout(() => { p.style.display = 'none'; }, 200);
+  document.removeEventListener('mousemove', moveZoom);
+}
+
+/* ── Process steps ─────────────────────────────────────── */
+const stepData = [
+  { title: 'High-Grade Raw Material Selection',
+    desc:  'PE100 grade resin is carefully selected and tested for melt flow index, density, and tensile strength before entering production.',
+    bullets: ['PE100 grade material', 'Optimal molecular weight distribution'] },
+  { title: 'Extrusion',
+    desc:  'High-precision German extruders produce uniform wall thickness with excellent melt homogeneity and consistent output.',
+    bullets: ['German-engineered extruders', 'Real-time melt pressure monitoring'] },
+  { title: 'Cooling',
+    desc:  'Advanced spray cooling system provides controlled, even cooling to prevent internal stress and surface deformation.',
+    bullets: ['Uniform cooling rate', 'Prevents warping & deformation'] },
+  { title: 'Sizing',
+    desc:  'Vacuum calibration ensures exact outer diameter conformance and perfect roundness throughout the pipe length.',
+    bullets: ['Vacuum calibration system', 'Precision diameter control ±0.1mm'] },
+  { title: 'Quality Control',
+    desc:  '100% ultrasonic and visual inspection at every stage guarantees zero-defect output meeting IS 5984 & ISO 4427.',
+    bullets: ['Ultrasonic wall thickness check', 'Hydrostatic pressure testing'] },
+  { title: 'Marking',
+    desc:  'Permanent inkjet marking includes batch number, pipe size, pressure rating, and certification marks for full traceability.',
+    bullets: ['Permanent UV-resistant ink', 'Full traceability code'] },
+  { title: 'Cutting',
+    desc:  'Precision servo-controlled cutting to customer-specified lengths with clean, burr-free ends ready for jointing.',
+    bullets: ['Servo-controlled cutting', 'Tolerances within ±2mm'] },
+  { title: 'Packaging',
+    desc:  'Automated packaging with protective end caps, stretch-film wrapping, and labeled bundles ready for safe dispatch.',
+    bullets: ['Protective end caps', 'Moisture-resistant stretch wrap'] }
+];
+
+const processImages = [
+  'https://picsum.photos/id/251/700/420',
+  'https://picsum.photos/id/256/700/420',
+  'https://picsum.photos/id/260/700/420',
+  'https://picsum.photos/id/270/700/420',
+  'https://picsum.photos/id/280/700/420',
+  'https://picsum.photos/id/290/700/420',
+  'https://picsum.photos/id/300/700/420',
+  'https://picsum.photos/id/310/700/420'
+];
+
+function selectStep(n) {
+  document.querySelectorAll('.step').forEach((s, i) => s.classList.toggle('active', i === n));
+  const d = stepData[n];
+  document.getElementById('step-title').textContent = d.title;
+  document.getElementById('step-desc').textContent  = d.desc;
+  const list = document.getElementById('step-list');
+  list.innerHTML = d.bullets.map(b => `<li>${b}</li>`).join('');
+  const img = document.getElementById('process-image');
+  img.style.opacity = '0';
+  setTimeout(() => { img.src = processImages[n]; img.style.opacity = '1'; }, 150);
+}
+document.getElementById('process-image').style.transition = 'opacity .2s ease';
+
+/* ── Action handlers ───────────────────────────────────── */
+function downloadDatasheet() {
+  alert('✅ Full Technical Datasheet downloaded (PDF 2.4 MB)');
+}
+function downloadFile(type) {
+  const msgs = {
+    installation: '📄 HDPE Pipe Installation Manual downloaded',
+    maintenance:  '📄 Maintenance & Inspection Handbook downloaded',
+    specs:        '📄 Engineering Specifications Sheet downloaded'
+  };
+  alert(msgs[type]);
+}
+function requestQuote() {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
+function contactUs() {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+}
+function talkToExpert() {
+  alert('👷 Connecting you to a piping expert...');
+}
+function sendCatalogue() {
+  const email = document.getElementById('catalogue-email').value.trim();
+  if (email) {
+    alert(`📧 Catalogue sent to ${email}`);
+    document.getElementById('catalogue-email').value = '';
+  } else {
+    alert('Please enter a valid email address.');
+  }
+}
+function submitQuoteForm() {
+  const name = document.getElementById('name').value.trim();
+  if (name) {
+    alert('🎉 Thank you! Your custom HDPE quote request has been submitted.');
+  } else {
+    alert('Please fill in your name to continue.');
+  }
+}
+
+console.log('%c✅ Mangalam HDPE Pipes — Figma-accurate build ready!',
+  'color:#c8102e;font-size:13px;font-weight:700');
+</script>
+</body>
+</html>
